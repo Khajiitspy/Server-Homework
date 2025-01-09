@@ -1,0 +1,35 @@
+﻿<Window x:Class="ServerConnector.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ServerConnector"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid Background="CadetBlue">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.3*"></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="0.2*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0" Text="SerMessage" Foreground="WhiteSmoke" FontWeight="Bold" FontSize="25" VerticalAlignment="Center" Margin="30,0,0,0"></TextBlock>
+        
+        <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="10" HorizontalAlignment="Right">
+            <StackPanel>
+                <TextBox x:Name="IPInput" FontSize="20" Padding="5" Width="200"></TextBox>
+                <TextBlock Text="Server IP" Foreground="GhostWhite" FontWeight="Bold" FontSize="15" HorizontalAlignment="Center"></TextBlock>
+            </StackPanel>
+            <StackPanel Margin="20,0,0,0">
+                <TextBox x:Name="PortInput" FontSize="20" Padding="5" Width="200"></TextBox>
+                <TextBlock Text="Server Port" Foreground="GhostWhite" FontWeight="Bold" FontSize="15" HorizontalAlignment="Center"></TextBlock>
+            </StackPanel>
+        </StackPanel>
+
+        <ScrollViewer Grid.Row="1" Margin="10" VerticalScrollBarVisibility="Auto">
+            <TextBox x:Name="UserMessageInput" Background="#FF305B69" BorderBrush="SlateGray" BorderThickness="5" Text="Enter your message here" Foreground="GhostWhite" FontSize="15" Padding="10" TextWrapping="Wrap"></TextBox>
+        </ScrollViewer>
+
+        <Button Grid.Row="3" HorizontalAlignment="Right" Margin="0,10,20,10" Content="Send =>" Background="ForestGreen" Foreground="FloralWhite" Padding="5" FontSize="20" FontWeight="Bold" Click="SendMessage_Click"></Button>
+    </Grid>
+</Window>

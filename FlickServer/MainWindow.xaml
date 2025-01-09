@@ -1,0 +1,46 @@
+﻿<Window x:Class="FlickServer.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FlickServer"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="460" Width="800" MaxHeight="460">
+    <Grid Background="DarkOliveGreen">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.3*"></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="0.2*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0" Text="FlickServer" FontStyle="Oblique" Foreground="WhiteSmoke" FontWeight="Bold" FontSize="25" VerticalAlignment="Center" Margin="30,0,0,0"></TextBlock>
+
+        <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="10" HorizontalAlignment="Right">
+            <StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBox x:Name="IPInput" FontSize="20" Padding="5" Width="200" Background="DarkSlateGray" Foreground="GhostWhite" TextAlignment="Center"></TextBox>
+                    <Menu Width="50" Background="Transparent" VerticalAlignment="Center">
+                        <MenuItem x:Name="LocalIpMenu" Padding="5,10" Header="Local..." VerticalAlignment="Center" Background="AliceBlue" FontSize="10" >
+                            
+                        </MenuItem>
+                    </Menu>
+                </StackPanel>
+                <TextBlock Text="Server IP" Foreground="GhostWhite" FontWeight="Bold" FontSize="15" HorizontalAlignment="Center"></TextBlock>
+            </StackPanel>
+            <StackPanel Margin="20,0,0,0">
+                <TextBox x:Name="PortInput" FontSize="20" Padding="5" Width="200" Background="DarkSlateGray" Text="1095" Foreground="GhostWhite" TextAlignment="Center"></TextBox>
+                <TextBlock Text="Server Port" Foreground="GhostWhite" FontWeight="Bold" FontSize="15" HorizontalAlignment="Center"></TextBlock>
+            </StackPanel>
+        </StackPanel>
+
+        <StackPanel Grid.Row="1" Margin="10">
+            <TextBlock Text="Output:" Foreground="WhiteSmoke" FontWeight="Bold" FontSize="15" Margin="5"></TextBlock>
+            <ScrollViewer VerticalScrollBarVisibility="Auto" BorderBrush="DarkSlateGray" BorderThickness="2">
+                <TextBlock x:Name="ServerOutput" Background="Black" Foreground="Green" FontSize="15" Padding="10" TextWrapping="Wrap" Height="230"></TextBlock>
+            </ScrollViewer>
+        </StackPanel>
+
+        <Button x:Name="RunButton" Grid.Row="3" HorizontalAlignment="Right" Margin="0,10,20,10" Content="Run Server" Background="ForestGreen" BorderBrush="Black" BorderThickness="2" Foreground="FloralWhite" Padding="5" FontSize="20" FontWeight="Bold" Click="RunServer_Click"></Button>
+        <Button x:Name="StopButton" Grid.Row="3" HorizontalAlignment="Right" Margin="0,10,20,10" Content="Stop Running" Background="Crimson" BorderBrush="Black" BorderThickness="2" Foreground="FloralWhite" Padding="5" FontSize="20" FontWeight="Bold" Click="StopServer_Click" Visibility="Collapsed"></Button>
+    </Grid>
+</Window>
